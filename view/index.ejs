@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Security 2 encryption</title>
+    </head>
+    <body>
+
+        <h3>Save your secret message</h3>
+        <form action="/user" method="POST">
+            <label>Name:</label>
+            <input type="text" placeholder="name" required />
+
+            <label>Message</label>
+            <textarea cols="4" rows="4" required></textarea>
+
+            <label>Password</label>
+            <input type="password" required/>
+        </form>
+
+        <h3>Get your secret message</h3>
+        <form action="/message" method="GET">
+            <label>Name:</label>
+            <input type="text" placeholder="name" required />
+
+            <label>Password</label>
+            <input type="password" required/>
+        </form>
+
+        <% if(secretMessage) { %>
+            <div>
+                <p></p>
+            </div>
+        <% } %>
+
+    </body>
+</html>
