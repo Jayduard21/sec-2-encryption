@@ -3,9 +3,9 @@ let bcrypt =  require('bcrypt-nodejs');
 let autoIncrement = require('mongoose-auto-increment');
 
 let userSchema = mongoose.Schema({
-    name: { type: String, required: true },
-    secret_message: { type: String, required: true },
-    password: { type: String, required: true }
+    name: { type: String },
+    message: { type: String },
+    password: { type: String }
 });
 
 // generate hash for password
@@ -14,8 +14,8 @@ userSchema.methods.generateHash = function(password) {
 }
 
 // validate password
-userSchema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
+userSchema.methods.validatePassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
 }
 
 userSchema.plugin(autoIncrement.plugin, 'User');

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home - Security 2 encryption</title>
+        <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Encrypt-R-us</h1>
+            <br/>
+            
+            <div>
+                <% if(message !=  null) { %>
+                    <p><%= message %></p>
+                <% } %>
+            </div>
+            <h3>Save your secret message</h3>
+            <form action="/" method="POST">
+                <label>Name:</label>
+                <input name="name" type="text" placeholder="name" required />
+        
+                <label>Message</label>
+                <textarea name="secretMessage" cols="36" rows="6" required></textarea>
+        
+                <label>Password</label>
+                <input name="password" type="password" required/>
+        
+                <input type="submit" value="Send"/>
+        
+            </form>
+    
+            <br/>
+            <h3>Get your secret message</h3>
+            <form action="/message" method="POST">
+        
+                <label>Name:</label>
+                <input name="name" type="text" placeholder="name" required />
+                    
+                <labe>Password</label>
+                <input name="password" type="password" required/>
+        
+                <input type="submit" value="Send"/>
+        
+            </form>
+        </main>       
+
+    </body>
+</html>
